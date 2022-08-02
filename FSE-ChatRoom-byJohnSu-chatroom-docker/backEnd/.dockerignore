@@ -1,3 +1,0 @@
-# docker ignore files
-.env
-node_modules
