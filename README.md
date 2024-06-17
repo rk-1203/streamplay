@@ -1,6 +1,8 @@
-# Streamplay Chrome Extension
+# Streamplay
 
-![Extension Logo](icons/icon128.png)
+<p align="center">
+  <img src="icons/icon128.png" alt="Extension Logo" />
+</p>
 
 ## Description
 The Streamplay Chrome extension allows you to control the playback speed of videos on any website. It provides a convenient way to adjust the speed of videos for faster or slower playback according to your preference.
