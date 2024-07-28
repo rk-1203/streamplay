@@ -8,7 +8,7 @@
 The Streamplay Chrome extension allows you to control the playback speed of videos on any website. It provides a convenient way to adjust the speed of videos for faster or slower playback according to your preference.
 
 ## Features
-- **Adjustable Speed**: Easily change the playback speed of videos using a slider.
+- **Adjustable Speed**: Easily change the playback speed of videos using a slider or a convenient stepper.
 - **Simple Interface**: Minimalist popup interface for quick speed adjustments.
 - **Universal Compatibility**: Works on most websites that embed HTML5 `<video>` elements.
 - **Persistent Settings**: Stores the last set speed for each URL domain simultaneously.
