@@ -8,14 +8,18 @@
   <body class="splay">
     <div class="card">
       <h2>Streamplay</h2>
-      <input
-        type="range"
-        min="0.25"
-        max="16.0"
-        step="0.05"
-        value="1.0"
-        id="speed-controller"
-      />
+      <div class="btn-group">
+        <button class="stepper-btn" id="speed-decrease-button">-</button>
+        <input
+          type="range"
+          min="0.25"
+          max="16.0"
+          step="0.05"
+          value="1.0"
+          id="speed-controller"
+        />
+        <button class="stepper-btn" id="speed-increase-button">+</button>
+      </div>
       <p>Speed: <span id="speed-value">1.0x</span></p>
       <button id="speed-reset-button">Reset</button>
     </div>

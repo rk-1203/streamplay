@@ -1,11 +1,21 @@
 const defaultPlaybackSpeed = '1.0';
+const maxPlaybackSpeed = 16.0;
+const stepper = 0.25;
 
 const getPlaybackSpeedElements = () => {
   const speedController = document.getElementById('speed-controller');
+  const speedIncreaseButton = document.getElementById('speed-increase-button');
+  const speedDecreaseButton = document.getElementById('speed-decrease-button');
   const speedValue = document.getElementById('speed-value');
   const speedResetButton = document.getElementById('speed-reset-button');
 
-  return {speedController, speedValue, speedResetButton};
+  return {
+    speedController,
+    speedIncreaseButton,
+    speedDecreaseButton,
+    speedValue,
+    speedResetButton,
+  };
 };
 
 const changePlaybackSpeed = (playbackSpeed) => {
@@ -50,13 +60,30 @@ const loadPlaybackSpeedFromStorage = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const {speedController, speedResetButton} = getPlaybackSpeedElements();
+  const {
+    speedController,
+    speedIncreaseButton,
+    speedDecreaseButton,
+    speedResetButton,
+  } = getPlaybackSpeedElements();
 
   loadPlaybackSpeedFromStorage();
 
   speedController.addEventListener('input', (e) => {
     const playbackSpeed = e.target.value;
     changePlaybackSpeed(playbackSpeed);
+  });
+
+  speedIncreaseButton.addEventListener('click', () => {
+    if (Number(speedController.value) < maxPlaybackSpeed - stepper) {
+      changePlaybackSpeed(Number(speedController.value) + stepper);
+    }
+  });
+
+  speedDecreaseButton.addEventListener('click', () => {
+    if (Number(speedController.value) > stepper) {
+      changePlaybackSpeed(Number(speedController.value) - stepper);
+    }
   });
 
   speedResetButton.addEventListener('click', () => {
